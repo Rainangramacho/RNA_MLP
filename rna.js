@@ -82,3 +82,5 @@ for (var i = 0; i < 2000000; i++) {
             rl.close();
         });
     });
+
+    //use npm i synaptic
