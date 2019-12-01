@@ -71,13 +71,13 @@ for (var i = 0; i < 2000000; i++) {
         output: process.stdout
     });
 
-    rl.question('Digite sua idade : ', (answer1) => {
+    rl.question('Digite sua idade : ', (idade) => {
         var start = new Date().getTime();
 
         rl.question('Digite a frase solicitada : ', (answer2) => {
             var end = new Date().getTime();
             var tempo_gasto = (1000 /(end - start));
-            console.log(Math.round(myNetwork.activate([answer1,tempo_gasto])));
+            console.log(Math.round(myNetwork.activate([idade,tempo_gasto])));
             console.log(tempo_gasto.toFixed(2) + "s");
             rl.close();
         });
