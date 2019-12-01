@@ -16,10 +16,9 @@ output: outputLayer
 var learningRate = .15;
 
 for (var i = 0; i < 2000000; i++) {  
-    // 0,0 => 0  
     myNetwork.activate([15,20]);  
     myNetwork.propagate(learningRate, [0]);
-    // 0,1 => 1  
+    
     myNetwork.activate([25,25]);  
     myNetwork.propagate(learningRate, [0]);
   
@@ -32,36 +31,30 @@ for (var i = 0; i < 2000000; i++) {
     myNetwork.activate([20,20]);  
     myNetwork.propagate(learningRate, [0]);
   
-    // 0,1 => 1  
     myNetwork.activate([30,28]);  
     myNetwork.propagate(learningRate, [0]);
   
-    // 1,1 => 0  
     myNetwork.activate([31,19]);  
     myNetwork.propagate(learningRate, [0]);
   
     myNetwork.activate([30,18]);  
     myNetwork.propagate(learningRate, [0]);
   
-    // 1,0 => 1  
     myNetwork.activate([40,35]);  
     myNetwork.propagate(learningRate, [1]);
   
-    // 1,1 => 0  
     myNetwork.activate([70,60]);  
     myNetwork.propagate(learningRate, [1]);
   
     myNetwork.activate([60,58]);  
     myNetwork.propagate(learningRate, [1]);
   
-    // 1,1 => 0  
     myNetwork.activate([65,59]);  
     myNetwork.propagate(learningRate, [1]);
     
     myNetwork.activate([50,51]);  
     myNetwork.propagate(learningRate, [1]);
   
-    // 1,1 => 0  
     myNetwork.activate([52,53]);  
     myNetwork.propagate(learningRate, [1]);
   
@@ -79,13 +72,9 @@ for (var i = 0; i < 2000000; i++) {
     });
 
     rl.question('Digite sua idade : ', (answer1) => {
-        //var tempo_gasto = console.time("queryTime");
-
         var start = new Date().getTime();
-        // var end = new Date().getTime();
 
         rl.question('Digite a frase solicitada : ', (answer2) => {
-            // console.timeEnd("queryTime");
             var end = new Date().getTime();
             var tempo_gasto = (1000 /(end - start));
             console.log(Math.round(myNetwork.activate([answer1,tempo_gasto])));
